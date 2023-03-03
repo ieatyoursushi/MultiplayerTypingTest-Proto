@@ -1,7 +1,7 @@
 import {textArea} from "../scripts/generateWords.js";
 const userInp = document.getElementById("userInput");
 let gameRunning = false;
-function start() {
+function startGame() {
     return new Promise((resolve, reject) => {
         setInterval(() => {
             if(userInp.value.length > 0) {
@@ -10,7 +10,7 @@ function start() {
         }, 0)
     })
 }
-start().then(status => {
+startGame().then(status => {
     gameRunning = status;
     console.log(`Game started: ${gameRunning}`);
     if(gameRunning) {
