@@ -24,7 +24,6 @@ startGame().then(status => {
 
 let i = 0;
 function checkTyping() {
-    var i = 0;
     document.addEventListener('keydown', function(event) {
         //same if statement but with a clause gaurd, hope i remember demorgans laws
         if (!(event.code === "Space" && userInp.value.trim() !== 0 && i < textArea.children.length && gameRunning)) {
@@ -43,8 +42,6 @@ function compareUserInputToCurrentIndexSpanTagsInnerHTML() {
         if (i > 0 && i < textArea.children.length) {
             textArea.children[i].style.background = "#dddddd";
             textArea.children[i - 1].style.background = "";
-        }
-        if (i < textArea.children.length) {
             autoScroll(i);
         } else {
             gameRunning = false;

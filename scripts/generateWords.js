@@ -1,6 +1,5 @@
 const textArea = document.getElementById("textArea");
 export {textArea};
-
 const words = [
     'the', 'of', 'and', 'a', 'to', 'in', 'that', 'it', 'with', 'for',
     'was', 'on', 'is', 'as', 'by', 'at', 'an', 'be', 'this', 'which',
