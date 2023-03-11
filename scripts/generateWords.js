@@ -2,6 +2,7 @@ const textArea = document.getElementById("textArea");
 export {textArea};
 let amountOfWords = 50;
 export {amountOfWords}
+const wordFiles = document.querySelectorAll(".wordFile");
 let urlPath = '/' + location.href.split("#")[1];
 function fetchWordsDB(path) {
     return new Promise((resolve, reject) => {
@@ -30,27 +31,19 @@ function displayWords(path) {
         }
     })
 }
-console.log(urlPath);
-console.log(urlPath === '/#top100eng')
-if(urlPath === "/top100eng") {
-    displayWords('English/top_100.txt');
-} else if (urlPath === "/top1000eng") {
-    displayWords('English/top_1000.txt');
-} else if (urlPath === "/top_100esp") {
-    displayWords("Spanish/top_100.txt");
-}
-document.getElementById("1000_eng").addEventListener('click', function() {
-    location.href = '/#top1000eng';
-    window.location.reload();
-})
-document.getElementById("100_eng").addEventListener('click', function() {
-    location.href = '/#top100eng';
-    window.location.reload();
-})
-document.getElementById("100_esp").addEventListener('click', function() {
-    location.href= '/#top_100esp';
-    window.location.reload();
-})
+
+
+wordFiles.forEach(wordFile => {
+    let buttonPath = wordFile.getAttribute("data-path");
+    let accessorPath = buttonPath.split("#")[0] + buttonPath.split("#")[1];
+    if(urlPath === accessorPath) {
+        displayWords(accessorPath + ".txt");
+    }
+    wordFile.addEventListener('click', function() {
+        location.href = wordFile.getAttribute("data-path");
+        window.location.reload();
+    })
+});
  
 
  
