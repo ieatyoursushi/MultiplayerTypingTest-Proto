@@ -44,6 +44,7 @@ function startCounter() {
 }
 let i = 0;
 function checkTyping() {
+    //use websocket to track
     document.addEventListener('keydown', function(event) {
         if(gameRunning && event.code !== 'Space' && event.key.length === 1 && /[a-z0-9\s\.,-]/i.test(event.key)) {
             totalKeyStrokes++;
@@ -69,6 +70,8 @@ function compareUserInputToCurrentIndexSpanTagsInnerHTML() {
             gameRunning = false;
             textArea.children[textArea.children.length - 1].style.background = "";
             console.log("game ended");
+            //fetch post request
+
             return;
         }
     } else {

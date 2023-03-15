@@ -31,8 +31,6 @@ function displayWords(path) {
         }
     })
 }
-
-
 wordFiles.forEach(wordFile => {
     let buttonPath = wordFile.getAttribute("data-path");
     let accessorPath = buttonPath.split("#")[0] + buttonPath.split("#")[1];
