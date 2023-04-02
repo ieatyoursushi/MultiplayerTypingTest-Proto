@@ -1,6 +1,6 @@
 const textArea = document.getElementById("textArea");
 export {textArea};
-let amountOfWords = 50;
+let amountOfWords = 20;
 export {amountOfWords}
 const wordFiles = document.querySelectorAll(".wordFile");
 let urlPath = '/' + location.href.split("#")[1];
@@ -25,7 +25,6 @@ function displayWords(path) {
             textArea.appendChild(word);
             textArea.appendChild(document.createTextNode(' '));
         }
-
         function randomRange(min, max) {
             return Math.floor(Math.random() * (max - min)) + min;
         }
