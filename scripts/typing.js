@@ -87,6 +87,32 @@ function autoScroll(i) {
 }
 
 //wrap in ded. class or different file
+// Online Javascript Editor for free
+// Write, Edit and Run your Javascript code using JS Online Compiler
+class WPM {
+    constructor(initialCharAmount, totalCharAmount, seconds) {
+        this.initialCharAmount = initialCharAmount;
+        this.totalCharAmount = totalCharAmount;
+    }
+    getInitialCharAmount() {
+        return this.initialCharAmount;
+    }
+    getTotalCharAmount() {
+        return this.totalCharAmount;
+    }
+}
+class WPMInfo extends WPM {
+    constructor(initialCharAmount, totalCharAmount, seconds) {
+        super(initialCharAmount, totalCharAmount, seconds);
+    }
+    getInitialCharAmountInfo() {
+        return super.getInitialCharAmount();
+    }
+}
+console.log(new WPMInfo(400, 415, 22).getInitialCharAmountInfo());
+
+
+
 function displayWPM(seconds) {
     //          5 chars = word ------ 60 seconds = minute
     let wpm = (totalCharactersRaw() / 5)/(seconds/60);
