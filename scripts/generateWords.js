@@ -8,8 +8,8 @@ let urlPath = '/' + location.href.split("#")[1];
 console.log(urlPath)
 if(urlPath === "/undefined") {
     urlPath = "/top_100_eng";
-    location.href = "/#top_100_eng";
-}
+    window.location = "/#top_100_eng";
+} 
 
 
 function fetchWordsDB(path) {
@@ -32,18 +32,24 @@ function displayWords(path) {
             word.innerText = words[randomRange(0, words.length - 1)];
             textArea.appendChild(word);
             textArea.appendChild(document.createTextNode(' '));
+            //console.log(word.children[0]);
+            if(word.children[0] !== "undefined") {
+                //word.removeChild(word.children[0]);
+            }
         }
-
+ 
         function randomRange(min, max) {
             return Math.floor(Math.random() * (max - min)) + min;
         }
     })
 }
+
 wordFiles.forEach(wordFile => {
     let buttonPath = wordFile.getAttribute("data-path");
     let accessorPath = buttonPath.split("#")[0] + buttonPath.split("#")[1];
     if(urlPath === accessorPath) {
         displayWords(accessorPath + ".txt");
+        
     }
     wordFile.addEventListener('click', function() {
         location.href = wordFile.getAttribute("data-path");

@@ -16,6 +16,15 @@ function startGame() {
     })
 }
 startGame().then(status => {
+    for(let i = 1; i <= 25; i++) { 
+        let wordDiv = document.getElementById(i);
+        if(wordDiv.children[0] != null) {
+            console.log(i);
+            wordDiv.removeChild(wordDiv.children[0]);
+        }
+        console.log(wordDiv.children[0]); 
+    }
+
     gameRunning = status;
     console.log(`Game started: ${gameRunning}`);
     if(gameRunning) {
