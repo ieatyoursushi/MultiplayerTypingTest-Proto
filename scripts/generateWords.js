@@ -1,15 +1,23 @@
 const textArea = document.getElementById("textArea");
 export {textArea};
-let amountOfWords = 50;
+let amountOfWords = 25;
 export {amountOfWords}
 const wordFiles = document.querySelectorAll(".wordFile");
 let urlPath = '/' + location.href.split("#")[1];
+
+console.log(urlPath)
+if(urlPath === "/undefined") {
+    urlPath = "/top_100_eng";
+    location.href = "/#top_100_eng";
+}
+
+
 function fetchWordsDB(path) {
     return new Promise((resolve, reject) => {
         fetch('WordDatabases/' + path)
         .then(res => res.text()).then(data => {
             resolve(data);
-        })
+        }).catch(err => reject(err));
     })
 }
 function displayWords(path) {

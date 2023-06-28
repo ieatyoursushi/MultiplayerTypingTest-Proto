@@ -5,6 +5,7 @@ const timer = document.getElementById("timer");
 let gameRunning = false;
 let seconds = 0;
 let totalKeyStrokes = 1;
+const ws = new WebSocket('wss://websocket-2.ieatyourshushi.repl.co');
 function startGame() {
     return new Promise((resolve, reject) => {
         setInterval(() => {
