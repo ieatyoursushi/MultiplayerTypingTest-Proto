@@ -1,10 +1,9 @@
 const textArea = document.getElementById("textArea");
 export {textArea};
-<<<<<<< HEAD
+ 
 let amountOfWords = 25;
-=======
-let amountOfWords = 20;
->>>>>>> 12932ffe4ac2323d53ffeec8a289f7e563d52f16
+
+ 
 export {amountOfWords}
 const wordFiles = document.querySelectorAll(".wordFile");
 let urlPath = '/' + location.href.split("#")[1];
@@ -41,10 +40,6 @@ function displayWords(path) {
                 //word.removeChild(word.children[0]);
             }
         }
-<<<<<<< HEAD
- 
-=======
->>>>>>> 12932ffe4ac2323d53ffeec8a289f7e563d52f16
         function randomRange(min, max) {
             return Math.floor(Math.random() * (max - min)) + min;
         }
